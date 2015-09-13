@@ -1,0 +1,5 @@
+--------- Images on the page http://localhost:3000 -------------
+Image: http://placehold.it/350x150. Alt text: william
+Image: http://placehold.it/350x150. Alt text: 
+Image: http://lorempixel.com/400/200/ has a missing alt attribute. It is captured as: image-0.png
+Image: http://lorempixel.com/400/200/sports has a missing alt attribute. It is captured as: image-1.png
