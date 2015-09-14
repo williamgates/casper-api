@@ -1,11 +1,17 @@
+/*
+* script finds images with no alt attributes
+* logs to console, captures img 
+*
+* usage: casperjs capture-missing-alts.js <url>
+*/
+
+
 var casper = require('casper').create();
 var system = require('system');
 var url = system.args[4];
-
-// an empty array
 var images, counter = 0;
 
-// get all image's element bounds
+// get images' info 
 casper.start(url, function() {
 	images = this.getElementsInfo('img');
 	return images;
