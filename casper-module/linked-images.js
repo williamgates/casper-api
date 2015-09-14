@@ -2,7 +2,7 @@ var casper = require('casper').create();
 var system = require('system');
 var url = system.args[4];
 var fs = require('fs');
-// to hold JSON
+// for JSON
 var output = [];
 
 // filename
@@ -27,12 +27,7 @@ casper.then(function() {
 });
 
 casper.run(function() {
-	
+	// write out file in json
 	fs.write(save, JSON.stringify(output), 'w');
-	//console.log(JSON.stringify(links));
-	console.log(JSON.stringify(output));
-
-
-
 	casper.exit();
 });
