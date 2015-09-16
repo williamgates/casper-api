@@ -6,6 +6,8 @@ var fs = require('fs');
 var output = [];
 var counter = 0;
 
+var links;
+
 // filename
 var fname = new Date().getTime() + '.json';
 var save = fs.pathJoin(fs.workingDirectory, 'logs', fname);
