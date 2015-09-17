@@ -27,6 +27,11 @@ html(lang="en")
 
 		// a(href="page.html"): img(src="http://lorempixel.com/200/200/sports")
 
+		if messages
+			ul
+				each message, index in messages.messages
+					li= index + ' ' + message
+
 		h2 Forms
 		form(action="/" method="post")
 			p: label(for="fname") First name
