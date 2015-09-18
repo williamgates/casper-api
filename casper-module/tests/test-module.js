@@ -19,15 +19,16 @@ exports.test = function() {
 	casper.then(function() {
 		uniqueFormControls = _.uniq(formControls);
 		if (uniqueFormControls.length < formControls.length) {
+
 			var sorted_arr = formControls.sort();
 			for (var i = 0; i < formControls.length - 1; i++) {
 			    if (sorted_arr[i + 1] == sorted_arr[i]) {
 			        duplicates.push(sorted_arr[i]);
 
 			        output.push({
-			        	WCAG: 'Level A 4.1.1',
-			        	AETest: 4,
-			        	message: 'Form elements have duplicate ids: ' + sorted_arr[i] 
+			        	url: url,
+			        	wcag: '4.1.1',
+			        	message: 'The ID: "' + sorted_arr[i]  + '" has been used more than once.'
 			        });
 			    }
 			}

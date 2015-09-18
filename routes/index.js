@@ -9,7 +9,7 @@ var out;
 exec(cmd, function(err, stdout, stderr) {
 	
 	out = JSON.parse(stdout);
-	
+	console.log(out);
 	return out;
 
 });

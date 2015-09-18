@@ -1,0 +1,20 @@
+body {
+	font: 100%/1.5 sans-serif;
+}
+h1 {
+	border-bottom: 1px solid #B72C2B;
+}
+.errors {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 50em;
+}
+.errors li {
+	/*border-bottom: 1px solid #B72C2B;*/
+	background: rgba(183, 44, 43, 0.1);
+	color: #000;
+	margin: 0.5em 0;
+	padding: 0.35em 1em 0.35em 2em;
+
+}
