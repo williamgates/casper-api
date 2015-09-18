@@ -7,8 +7,11 @@ var cmd = 'casperjs casper-module/forms-duplicate-ids.js http://localhost:3000';
 
 var out;
 exec(cmd, function(err, stdout, stderr) {
-	console.log(JSON.parse(stdout));
-	return out = stdout;
+	
+	out = JSON.parse(stdout);
+	
+	return out;
+
 });
 
 router.get('/', function(req, res) {

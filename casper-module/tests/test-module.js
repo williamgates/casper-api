@@ -25,8 +25,10 @@ exports.test = function() {
 			        duplicates.push(sorted_arr[i]);
 
 			        output.push({
-			        	message: '4.1.1-4: Form elements have duplicate ids: ' + sorted_arr[i] 
-			        })
+			        	WCAG: 'Level A 4.1.1',
+			        	AETest: 4,
+			        	message: 'Form elements have duplicate ids: ' + sorted_arr[i] 
+			        });
 			    }
 			}
 		}
