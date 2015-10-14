@@ -32,6 +32,12 @@ exports.test = function() {
 			        });
 			    }
 			}
+		} else {
+			output.push({
+				url: url,
+				wcag: '4.1.1',
+				message: 'Pass'
+			});
 		}
 			
 		

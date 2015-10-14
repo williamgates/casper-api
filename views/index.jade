@@ -1,71 +1,76 @@
-doctype html 
-html(lang="en") 
-	head
-		title=title
-		link(rel="stylesheet" href="/css/styles.css")
-	body
-		h1=title
+extends layout
 
-		// h2 Images and alternative text
+block content
 
-		// p: img(src="http://placehold.it/350x150" alt="william")
+	h1=title
 
-		// p: img(src="http://placehold.it/350x150" alt="")
+	// h2 Images and alternative text
 
-		// p: img(src="http://lorempixel.com/400/200/")
+	// p: img(src="http://placehold.it/350x150" alt="william")
 
-		// p: img(src="http://lorempixel.com/400/200/sports")
+	// p: img(src="http://placehold.it/350x150" alt="")
 
-		// p: img(src="http://lorempixel.com/400/200/sports" alt="file.png")
+	// p: img(src="http://lorempixel.com/400/200/")
 
-		// p: img(src="http://lorempixel.com/400/200/sports" alt="file.jpg")
+	// p: img(src="http://lorempixel.com/400/200/sports")
+
+	// p: img(src="http://lorempixel.com/400/200/sports" alt="file.png")
+
+	// p: img(src="http://lorempixel.com/400/200/sports" alt="file.jpg")
 
 
 
-		// a(href="page.html"): img(src="http://lorempixel.com/400/200/sports" alt="file.jpg")
+	// a(href="page.html"): img(src="http://lorempixel.com/400/200/sports" alt="file.jpg")
 
-		// a(href="page.html"): img(src="http://lorempixel.com/400/200/sports")
+	// a(href="page.html"): img(src="http://lorempixel.com/400/200/sports")
 
-		// a(href="page.html"): img(src="http://lorempixel.com/200/200/sports")
+	// a(href="page.html"): img(src="http://lorempixel.com/200/200/sports")
+
+	//- if messages
+	//- 	h2 URL: #{messages[0].url}
+	//- 	h3 WCAG Success Criterion #{messages[0].wcag}
+	//- 	ul(class="errors")
+	//- 		each message in messages
+	//- 			li #{message.message}
+
+
+	form(action="/" method="post")
+		//- p
+		//- 	label(for="fname") First name
+		//- 	input(type="text" id="fname")
+
+		//- p
+		//- 	label(for="fname") Last name
+		//- 	input(type="text" id="fname")
+
+		//- p
+		//- 	label(for="message") message
+		//- 	textarea(id="message")
+
+		//- <br>
 		
-		if messages
-			h2 URL: #{messages[0].url}
-			h3 WCAG Success Criterion #{messages[0].wcag}
-			ul(class="errors")
-				each message in messages
-					li #{message.message}
+		//- input(type="checkbox" id="blue")
+		//- label(for="blue") blue
+		
+		//- input(type="checkbox" id="yellow")
+		//- label(for="yellow") yellow
+
+		//- input(type="checkbox" id="yellow")
+		//- label(for="yellow") yellow
+
+		//- input(type="checkbox" id="red")
+		//- label(for="red") red
+
+		//- input(type="checkbox" id="red")
+		//- label(for="red") red
 
 		
-		form(action="/" method="post")
-			p
-				label(for="fname") First name
-				input(type="text" id="fname")
 
-			p
-				label(for="fname") Last name
-				input(type="text" id="fname")
+		label(for="url") URL:
+		input(type="text" id="url" name="url")
 
-			p
-				label(for="message") message
-				textarea(id="message")
+		input(type="submit" value="submit")
 
-			<br>
-			
-			input(type="checkbox" id="blue")
-			label(for="blue") blue
-			
-			input(type="checkbox" id="yellow")
-			label(for="yellow") yellow
-
-			input(type="checkbox" id="yellow")
-			label(for="yellow") yellow
-
-			input(type="checkbox" id="red")
-			label(for="red") red
-
-			input(type="checkbox" id="red")
-			label(for="red") red
-
-			
+				
 
 

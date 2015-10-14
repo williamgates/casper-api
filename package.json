@@ -8,6 +8,7 @@
   "author": "William Gates <info@viadesign.co.uk> (http://www.viadesign.co.uk)",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "underscore": "^1.8.3"

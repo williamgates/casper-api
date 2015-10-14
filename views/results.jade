@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+	h1=title
+
+
+	if messages
+		h2 Page tested: #{messages[0].url}
+		h3 WCAG Success Criterion #{messages[0].wcag}
+		ul(class="errors")
+			each message in messages
+				li #{message.message}

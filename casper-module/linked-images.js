@@ -21,7 +21,7 @@ casper.then(function() {
 	this.each(links, function(self, image) {
 		if (image.attributes.alt === undefined) { // no alt text
 			output.push({ 
-				WCAG: '2.4.4-1: Linked image has missing alt text.',
+				wcag: '2.4.4-1: Linked image has missing alt text.',
 				message: 'Linked image has no alt text',
 				image: image.attributes.src,
 				imageID: 'image-' + counter
@@ -33,12 +33,20 @@ casper.then(function() {
 		        height: image.height
 			});
 			counter++;
-		} 
+		} else {
+			output.push({
+				url: url,
+				wcag: '2.4.4-1: Linked image has missing alt text.',
+				message: 'Pass ' + image.attributes.src + ' has alt text'
+			});
+		}
 	});
 });
 
 casper.run(function() {
 	// write out file in json
-	fs.write(save, JSON.stringify(output), 'w');
+	//fs.write(save, JSON.stringify(output), 'w');
+	console.log(JSON.stringify(output));
+		
 	casper.exit();
 });
