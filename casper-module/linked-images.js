@@ -14,7 +14,12 @@ var save = fs.pathJoin(fs.workingDirectory, 'logs', fname);
 
 casper.start(url, function() {
 	links = this.getElementsInfo('a img');
-	return links;
+	if (links !== 'undefined') {
+		return links;
+	} else {
+		console.log('Can\'t find images');
+	}
+	
 });
 
 casper.then(function() {
@@ -24,7 +29,8 @@ casper.then(function() {
 				wcag: '2.4.4-1: Linked image has missing alt text.',
 				message: 'Linked image has no alt text',
 				image: image.attributes.src,
-				imageID: 'image-' + counter
+				imageID: 'image-' + counter,
+				stl: 'error'
 			});
 			this.capture('image-' + counter + '.png', {
 				top: image.y,
@@ -37,7 +43,8 @@ casper.then(function() {
 			output.push({
 				url: url,
 				wcag: '2.4.4-1: Linked image has missing alt text.',
-				message: 'Pass ' + image.attributes.src + ' has alt text'
+				message: 'Pass: alt text is: ' + image.attributes.alt,
+				stl: 'pass'
 			});
 		}
 	});

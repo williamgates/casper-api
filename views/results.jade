@@ -8,6 +8,9 @@ block content
 	if messages
 		h2 Page tested: #{messages[0].url}
 		h3 WCAG Success Criterion #{messages[0].wcag}
-		ul(class="errors")
+		ul()
 			each message in messages
-				li #{message.message}
+				li(class="#{message.stl}") #{message.message}
+
+	p
+		a(href="/") Search again

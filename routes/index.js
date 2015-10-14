@@ -5,7 +5,7 @@ var exec = require('child_process').exec;
 
 //var cmd = 'casperjs casper-module/forms-duplicate-ids.js http://localhost:3000';
 
-var cmd = 'casperjs casper-module/linked-images.js ';
+//var cmd = 'casperjs casper-module/linked-images.js ';
 var out = {};
 var url = '';
 // exec(cmd, function(err, stdout, stderr) {
@@ -26,13 +26,16 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 
 	out = {};
-	cmd += req.body.url;
+	var cmd = '';
+	var cmd = 'casperjs casper-module/linked-images.js ' + req.body.url;
+
+	console.log(cmd);
 
 	exec(cmd, function(err, stdout, stderr) {
 	
 		out = JSON.parse(stdout);
 		
-		console.log(cmd);
+		
 		console.log(out);
 
 		display(out);

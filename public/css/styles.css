@@ -10,14 +10,21 @@ input[type="text"] {
 	font-size: 100%;
 	padding: 0.5em;
 }
-.errors {
+ul {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	max-width: 50em;
 }
-.errors li {
+.error {
 	border-left: 9px solid #B72C2B;
+	background: rgba(183, 44, 43, 0.1);
+	color: #000;
+	margin: 0.5em 0;
+	padding: 0.75em 1em 0.75em 2em;
+}
+.pass {
+	border-left: 9px solid green;
 	background: rgba(183, 44, 43, 0.1);
 	color: #000;
 	margin: 0.5em 0;
