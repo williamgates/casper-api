@@ -6,13 +6,16 @@ var fs = require('fs');
 var output = [];
 var counter = 0;
 
-var links;
+var links = null;
 
 // filename
 var fname = new Date().getTime() + '.json';
 var save = fs.pathJoin(fs.workingDirectory, 'logs', fname);
 
 casper.start(url, function() {
+	if (!this.exists('a img')) {
+		return;
+	}
 	links = this.getElementsInfo('a img');
 	if (links !== 'undefined') {
 		return links;
@@ -20,9 +23,18 @@ casper.start(url, function() {
 		console.log('Can\'t find images');
 	}
 	
+	
 });
 
 casper.then(function() {
+	
+	if (links === null) {
+		output.push({
+			wcag: '2.4.4-1: Linked image has missing alt text.',
+			message: 'There are no linked images on this page',
+			sty: 'pass'
+		});
+	}
 	this.each(links, function(self, image) {
 		if (image.attributes.alt === undefined) { // no alt text
 			output.push({ 

@@ -32,6 +32,11 @@ router.post('/', function(req, res) {
 	console.log(cmd);
 
 	exec(cmd, function(err, stdout, stderr) {
+
+		if (err) {
+			console.log(err);
+			return;
+		}
 	
 		out = JSON.parse(stdout);
 		
